@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category List{% endblock %}
+
+{% block body %}
+    <a href="{{ path('category_create') }}" class='btn btn-success'>New Category</a>
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>STT</th>
+                <th>Category</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+            <tr>
+                <th scope="row">{{ category.id }}</th>
+                <td><a href="{{ path('category_list', {'id':category.id}) }}">{{ category.catename }}</a></td>
+
+                <td>
+                    <a href="{{ path('category_delete', {'id': category.id}) }}"class='btn btn-danger'>Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
