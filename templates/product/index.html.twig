@@ -3,7 +3,9 @@
 {% block title %}Product List{% endblock %}
 
 {% block body %}
-    <a href="{{ path('product_create') }}" class='btn btn-success'>New Product</a>
+    <h1>List Product</h1>
+    <a href="{{ path('product_create') }}" class='btn-get-started'>New Product</a>
+    <a class='btn btn-primary'>Order Product</a>
     <div class="bs-example" data-example-id="striped-table">
         <table class="table table-striped">
             <thead>
