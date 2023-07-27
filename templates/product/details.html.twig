@@ -3,14 +3,35 @@
 {% block title %}Product Details{% endblock %}
 
 {% block body %}
-    <h1>Product Details</h1>
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container" data-aos="fade-up">
 
-    <a href="{{ path('product_list') }}" class="btn btn-default">Back to Product List</a>
-    <h2 class="page-header">{{ products.prodName }}</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Price: ${{ products.price }}</li>
-        <li class="list-group-item"><img src="{{ asset('upload/productImages/' ~ products.image) }}" width="100px" height="100px" /></li>
-        <li class="list-group-item">Date: <strong>{{ products.date }}</strong></li>
-    </ul>
-        <p>{{ products.description }}</p>
+            <div class="row gy-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper">
+                            <div class="swiper-slide">
+                                <img src="{{ asset('upload/productImages/' ~ products.image) }}" alt="">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>{{ products.prodName }}</h3>
+                        <ul>
+                            <li><strong>Price</strong>: ${{ products.price }}</li>
+                            <li><strong>Project date</strong>: {{ products.date }}</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>This is an example of product detail</h2>
+                        <p>{{ products.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 {% endblock %}
