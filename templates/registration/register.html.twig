@@ -28,22 +28,21 @@
 </head>
 
 <body>
-    <h1>Register</h1>
+    <h3 class="row mt-5 justify-content-center">Register</h3>
 
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        <div class="mb-3 mt-3">
+        <div class="col-lg-12 justify-content-center">
             <label for="email" class="form-label">Email: </label>
             {{ form_widget(registrationForm.email, {
                 'attr':{
-                    'class':'form-control',
+                    'class':'form-control ',
                     'placeholder': 'Enter email'
                 }
             }) }}
         </div>
-        <br>
-        <div class="mb-3">
+        <div class="col-lg-12 justify-content-center">
             <label for="password" class="form-label">Password: </label>
             {{ form_widget(registrationForm.plainPassword, {
                 'attr':{
@@ -53,8 +52,7 @@
                 }
             }) }}
         </div>
-        <br>
-        <div class="form-check mb-3">
+        <div class="form-check mb-3 text-center">
             {{ form_widget(registrationForm.agreeTerms, {
                 'attr':{
                     'type': 'checkbox'
@@ -62,9 +60,10 @@
             }) }}
             <label class="form-check-label">Agree Terms!</label>
         </div>
-        <br>
-        <button type="submit" class="btn btn-success">Register</button>
-        <a href="{{ path('login') }}" class='btn btn-primary'>Back To Login</a>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Register</button>
+            <a href="{{ path('login') }}" class='btn btn-primary'>Back To Login</a>
+        </div>
     {{ form_end(registrationForm) }}
 
 </body>

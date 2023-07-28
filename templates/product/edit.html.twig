@@ -1,101 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Product Update</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Vendor CSS Files -->
-    <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="/assets/css/style.css" rel="stylesheet">
-</head>
+{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Update Product</h1>
+    <h3 class="row mt-5 justify-content-center">Update Product</h3>
 
     {{ form_start(form) }}
-    <div class="form-group">
-        <label for="category">Category</label>
-        {{ form_widget(form.category,{
-            'attr':{
-                'class':'form-control'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="category">Product Name:</label>
-        {{ form_widget(form.prodName,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Product name'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="category">Price:</label>
-        {{ form_widget(form.price,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Price'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="category">Quantity:</label>
-        {{ form_widget(form.quantity,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Quantity'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        {{ form_widget(form.description,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Description'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="due_date">Date</label>
-        {{ form_widget(form.date,{
-            'attr':{
-                'class':'form-control'
-            }
-        }) }}
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="due_date">Image</label>
-        {{ form_widget(form.productImage,{
+    <div class="row mt-5 justify-content-center" data-aos="fade-up">
+        <div class="col-lg-10">
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    {{ form_widget(form.category,{
+                        'attr':{
+                            'class':'form-control'
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="category">Product Name:</label>
+                    {{ form_widget(form.prodName,{
+                        'attr':{
+                            'class':'form-control',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="category">Price:</label>
+                    {{ form_widget(form.price,{
+                        'attr':{
+                            'class':'form-control',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="category">Quantity:</label>
+                    {{ form_widget(form.quantity,{
+                        'attr':{
+                            'class':'form-control',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    {{ form_widget(form.description,{
+                        'attr':{
+                            'class':'form-control',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="due_date">Date</label>
+                    {{ form_widget(form.date,{
+                        'attr':{
+                            'class':'form-control'
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-group">
+                    <label for="due_date">Image</label>
+                    {{ form_widget(form.productImage,{
 
-        }) }}
+                    }) }}
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" name="update_product" value="Update" class="btn btn-success"/>
+            </div>
+            <br>
+        </div>
     </div>
-    <br>
-    <input type="submit" name="edit_product" value="Edit" class="btn btn-primary"/>
     {{ form_end(form) }}
 {% endblock %}
