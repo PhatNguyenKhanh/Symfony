@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row content">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2>SalePhoneS</h2>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+                    <p>
+                        After more than 10 years of continuous movement and development,
+                        the SalePhoneS retail system has continuously expanded with a chain of more than 100 stores
+                        nationwide and is proud to be one of the 5 largest systems in Vietnam in the field of technology.
+                    </p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i> Providing customers with products at good prices, bringing peace of mind and trust.</li>
+                        <li><i class="ri-check-double-line"></i> Giving employees a friendly working environment with many development opportunities.</li>
+                        <li><i class="ri-check-double-line"></i> Give managers a level playing field to express themselves, ensuring a prosperous life.</li>
+                        <li><i class="ri-check-double-line"></i> Bringing all partners close cooperation, mutual respect & mutual development.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Us Section -->
+
+    <section id="portfolio" class="portfolio">
+        <div class="row portfolio-container" data-aos="fade-up">
+            {% for product in products %}#}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <img src="{{ asset('upload/productImages/' ~ product.image) }}" class="img-fluid" alt="" width="300px" height="300px">
+                    <div class="portfolio-info">
+                        <h4>{{ product.prodName }}</h4>
+                        <p>${{ product.price }}</p>
+                        <a href="{{ asset('upload/productImages/' ~ product.image) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"></a>
+                        <a href="{{ path('user_details', {'id':product.id}) }} " class='btn btn-success'>View</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

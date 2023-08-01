@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper">
+                            <div class="swiper-slide">
+                                <img src="{{ asset('upload/productImages/' ~ products.image) }}" alt="">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>{{ products.prodName }}</h3>
+                        <ul>
+                            <li><strong>Price</strong>: ${{ products.price }}</li>
+                            <li><strong>Quantity in stock</strong>: {{ products.quantity }}</li>
+                            <li><strong>Project date</strong>: {{ products.date }}</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>This is an example of product detail</h2>
+                        <p>{{ products.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
